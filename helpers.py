@@ -49,3 +49,13 @@ def d_prime_with_plt(S, filename):
     plt.show()
 
     return d_prime
+
+
+def fnmr_and_fmr(S, threshold):
+    diagonal = S.diagonal()
+    non_diagonal = S[np.where(~np.eye(S.shape[0], dtype=bool))]
+
+    fnmr = len(np.where(diagonal < threshold)[0]) / diagonal.shape[0]
+    fmr = len(np.where(non_diagonal > threshold)[0]) / non_diagonal.shape[0]
+
+    return fnmr, fmr
