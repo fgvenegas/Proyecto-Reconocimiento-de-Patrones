@@ -1,0 +1,1 @@
+# Proyecto-Reconocimiento-de-Patrones
